@@ -1,0 +1,203 @@
+/* :root, body, h2, p, button, pre (大部分來自您上一版) */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* 讓卡片垂直排列 */
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background-image: url('1.jpg');
+    background-color: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: rgba(255, 255, 255, 0.87);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 2.5rem;
+    border-radius: 16px;
+    background: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #f5f5f5;
+    line-height: 1.1;
+}
+
+p { text-align: center; color: #a0a0a0; margin-bottom: 2rem; }
+pre {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f0f0f0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+    min-height: 50px;
+    text-align: left;
+}
+button { /* 這是主頁的白色按鈕樣式 */
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.8rem 1.2em;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: inherit;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.25s, transform 0.1s; /* 加入 transform */
+}
+button:hover {
+    background-color: #f0f0f0;
+    border-color: #535bf2;
+}
+button:active { /* 按下效果 */
+    transform: scale(0.98);
+}
+button:disabled { background-color: #555; color: #aaa; cursor: not-allowed; transform: none; } /* 移除 disabled 的 active 效果 */
+
+
+.form-group { margin-bottom: 1.5rem; }
+input[type="file"] { color: #ccc; }
+input[type="file"]::file-selector-button {
+    font-family: inherit;
+    font-weight: 500;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.25s;
+}
+input[type="file"]::file-selector-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #646cff;
+}
+
+/* 錯誤/成功 訊息 */
+.success-message {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 1rem;
+    background-color: rgba(40, 167, 69, 0.1);
+    border: 1px solid rgba(40, 167, 69, 0.5);
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center; /* 讓狀態訊息置中 */
+}
+.error-message {
+    color: #dc3545;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 彙總卡片樣式 */
+.summary-card {
+    max-width: 800px;
+    margin-bottom: 2rem; /* 調整與下方按鈕的間距 */
+}
+#summaryTable { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+#summaryTable th, #summaryTable td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); text-align: left; }
+#summaryTable th { color: #a0a0a0; font-size: 0.9em; font-weight: 500; }
+#summaryTable td:last-child { font-weight: bold; color: #ffffff; }
+.summary-total { text-align: right; font-size: 1.2rem; font-weight: bold; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+.summary-total p { margin: 0; color: #ffffff; }
+
+/* 歷史紀錄頁面樣式 */
+.history-link { text-align: center; margin-top: 2rem; margin-bottom: 1rem; /* 調整間距 */}
+.history-link a { color: #a0a0a0; text-decoration: none; font-size: 0.9em; }
+.history-link a:hover { color: #ffffff; text-decoration: underline; }
+.history-card { max-width: 800px; }
+#historyTable { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.9em; }
+#historyTable th, #historyTable td { padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); text-align: left; }
+#historyTable th { color: #a0a0a0; font-weight: 500; }
+#historyTable td { color: #f0f0f0; }
+#historyTable tr:last-child td { border-bottom: none; }
+
+/* --- (修改) 刪除按鈕區塊樣式 --- */
+.delete-section {
+    /* (移除) border-top, padding-top (因為它不再卡片內) */
+    text-align: center;
+    width: 100%; /* 讓區塊佔滿寬度以便置中按鈕 */
+    max-width: 800px; /* 與卡片同寬 */
+    margin-top: 0; /* 調整上方間距 */
+    margin-bottom: 2rem; /* 與下方卡片的間距 */
+}
+/* (關鍵 + 美化) 紅色危險按鈕 */
+.danger-button {
+    background: linear-gradient(145deg, #e53e3e, #c53030); /* 紅色漸層 */
+    color: white;
+    width: auto; /* 不要佔滿整行 */
+    padding: 0.8em 1.5em;
+    margin-bottom: 1rem;
+    border: none; /* 移除 border */
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4); /* 紅色陰影 */
+    transition: background 0.3s, transform 0.1s, box-shadow 0.3s; /* 加入更多 transition */
+}
+.danger-button:hover {
+    background: linear-gradient(145deg, #c53030, #a02020); /* 深紅色漸層 */
+    border-color: transparent; /* hover 時也不要 border */
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.5); /* 更深的陰影 */
+}
+.danger-button:active { /* 按下效果 */
+     transform: scale(0.97);
+     box-shadow: 0 2px 10px rgba(220, 53, 69, 0.3);
+}
+.danger-button:disabled { /* disabled 樣式 */
+     background: #555;
+     box-shadow: none;
+     color: #aaa;
+     cursor: not-allowed;
+     transform: none;
+}
+
+.delete-section p { /* 刪除狀態訊息 */
+    margin: 0;
+    font-size: 0.9em;
+    /* 讓狀態訊息也有背景，更清晰 */
+    padding: 0.5rem;
+    border-radius: 6px;
+    display: inline-block; /* 讓背景符合文字寬度 */
+}
+/* 為刪除狀態的成功/失敗訊息套用樣式 */
+.delete-section p.success-message {
+     background-color: rgba(40, 167, 69, 0.2);
+     border: 1px solid rgba(40, 167, 69, 0.6);
+     color: #28a745;
+}
+.delete-section p.error-message {
+     background-color: rgba(220, 53, 69, 0.2);
+     border: 1px solid rgba(220, 53, 69, 0.6);
+     color: #dc3545;
+}

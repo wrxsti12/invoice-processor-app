@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>發票歷史紀錄</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card-container summary-card">
+        <h2>每月彙總 (TWD)</h2>
+        <table id="summaryTable">
+            <thead>
+                <tr>
+                    <th>月份</th>
+                    <th>總支出 (TWD)</th>
+                </tr>
+            </thead>
+            <tbody id="summaryBody">
+                <tr><td colspan="2">載入中...</td></tr>
+            </tbody>
+        </table>
+        <div class="summary-total" id="summaryTotal">
+             <p>載入中...</p>
+        </div>
+    </div>
+
+    <div class="delete-section standalone-delete"> <button id="deleteAllButton" class="danger-button">刪除所有歷史紀錄</button>
+        <p id="deleteStatus" style="display: none;"></p> </div>
+
+
+    <div class="card-container history-card">
+        <h2>發票歷史紀錄</h2>
+        <div class="history-link">
+            <a href="/">&laquo; 返回上傳頁面</a>
+        </div>
+
+        <table id="historyTable">
+            <thead>
+                <tr>
+                    <th>發票號碼</th>
+                    <th>公司名稱</th>
+                    <th>項目</th>
+                    <th>原始金額</th>
+                    <th>幣別</th>
+                    <th>換算台幣 (TWD)</th>
+                    <th>當時匯率</th>
+                    <th>日期 (ISO)</th>
+                </tr>
+            </thead>
+            <tbody id="historyBody">
+                <tr>
+                    <td colspan="8">載入中...</td>
+                </tr>
+            </tbody>
+        </table>
+
+        </div>
+
+    <script src="history.js"></script>
+</body>
+</html>

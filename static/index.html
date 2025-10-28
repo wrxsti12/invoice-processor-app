@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>發票辨識系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="app-view" class="card-container">
+        <h2>發票辨識系統</h2>
+        <p>請上傳您的發票 (PDF, JPG, PNG)</p>
+
+        <form id="uploadForm">
+            <div class="form-group">
+                <input type="file" name="file" id="fileInput" accept="image/*,application/pdf" required>
+            </div>
+            <button type="submit" id="submitButton">上傳並辨識</button>
+        </form>
+        
+        <div id="successMessage" class="success-message" style="display: none;">
+            ✅ 辨識並儲存成功！
+        </div>
+
+        <h3>辨識結果:</h3>
+        <pre id="result">--- 尚未辨識 ---</pre>
+
+        <div class="history-link">
+            <a href="/history.html">查看所有發票歷史紀錄 &raquo;</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
