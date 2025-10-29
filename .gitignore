@@ -23,3 +23,6 @@ temp_files/
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables
+.env
